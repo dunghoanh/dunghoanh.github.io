@@ -24,10 +24,11 @@
             text-align: center;
         }
         main {
-            width: 80%;
+            width: 90%; /* Changed width to 90% for better mobile display */
             max-width: 1000px;
             padding: 2rem;
-            text-align: left; 
+            text-align: left;
+            box-sizing: border-box; /* Added box-sizing */
         }
         section {
             margin-bottom: 2rem;
@@ -48,23 +49,27 @@
         }
         .container {
             display: flex;
-            justify-content: flex-start;
-            margin-right: 40px;
+            flex-direction: column; /* Changed flex direction to column for better mobile display */
+            align-items: center; /* Center align items in container */
         }
         .half-size {
-            width: 200px; 
-            height: 150px;
-            margin-left: 40px;
+            width: 80%; /* Changed width to 80% for better mobile display */
+            max-width: 300px; /* Set max-width for better responsiveness */
+            height: auto; /* Set height to auto for maintaining aspect ratio */
+            margin-top: 20px; /* Added margin top for better spacing */
         }
-        body, html {
-            margin: 0;
-            padding: 0;
-        }
-        main {
-            max-width: 800px;
-            padding: 2rem;
-            text-align: left;
-            box-sizing: border-box; 
+        /* Added media query for better mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            main {
+                padding: 1rem; /* Adjusted padding for smaller screens */
+            }
+            .container {
+                flex-direction: column; /* Changed flex direction to column for better mobile display */
+            }
+            .half-size {
+                width: 100%; /* Set width to 100% for better mobile display */
+                margin-top: 10px; /* Adjusted margin top for better spacing */
+            }
         }
     </style>
 </head>
@@ -73,13 +78,13 @@
         <section id="about">
             <h2>About me</h2>
             <div class="container">
+                <img src="code.gif" alt="" class="half-size">
                 <ul>
                     <li>👋 Hi there, my full name is Ho Anh Dung.</li>
                     <li>🏫 I graduated from the Data Science program at HCMUS.</li>
                     <li>💼 I’m presently employed at FPT Play.</li>
                     <li>💞 I’m interested in AI Technology and Big Data.</li>
                 </ul>
-                <img src="code.gif" alt="" class="half-size">
             </div>
             <h4>You can reach me at:</h4>
             <ul>
